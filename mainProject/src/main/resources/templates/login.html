@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml" lang="RU">
+
+<head th:replace="blocks/header2.html :: head"></head>
+<body>
+<div th:replace="blocks/header2.html:: header"></div>
+
+<div class="container mt-4 mb-4">
+
+    <div class="row justify-content-md-center">
+
+
+        <div class="col-md-auto bg-dark p-5 m-3 rounded shadow-lg">
+            <div class="text-white mb-4 text-center">
+                <div class="display-4" style="font-size: 34px">Вход в аккаунт</div>
+                <div class="text-white-50" style="font-size: 14px">Войдите для доступа ко всем функциям</div>
+            </div>
+
+
+            <form th:action="@{/authenticateTheUser}" method="post">
+                <div class="form-group">
+                    <label for="login" class="text-white">Login</label>
+                    <input type="text" name="username" class="form-control" id="login">
+                </div>
+                <div class="form-group">
+                    <label for="password" class="text-white">Password</label>
+                    <input type="password" name="password" class="form-control" id="password">
+                </div>
+                <button type="submit" class="btn btn-outline-warning btn-block">Войти</button>
+            </form>
+            <div class="mt-4">
+                <span class="text-white">Ещё нет аккаунта?</span> <a class="text-warning" th:href="@{'/registration'}">Зарегистрируйтесь!</a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+<footer th:replace="blocks/footer2.html :: footer"></footer>
+</body>
+</html>
